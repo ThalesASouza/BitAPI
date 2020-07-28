@@ -1,9 +1,10 @@
 import express from "express";
+import cors from 'cors'
 import { bitixModel } from "../model/modelBitix.js";
 
 const rota = express.Router();
 
-rota.get("/periodoBitix", async (req, res) => {
+rota.get("/periodoBitix", cors(), async (req, res) => {
   const { inicial, final } = req.query;
   const periodoInicial = new Date(inicial);
   const periodoFinal = new Date(final);
